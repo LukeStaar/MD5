@@ -1,0 +1,28 @@
+public string CriptografiaMD5 (string Valor)
+
+{
+
+ string strResultado="";
+ 
+ byte[] bytMensagem = System.text.Encoding.Default.GetBytes(Valor);
+ 
+ 
+ //Cria o Hash MD5 hash
+ 
+   System.Security.Cryptgraphy.MD5CryptoServiceProvider oMD5Provider= new
+ System.Security.Cryptgraphy.MD5CryptoServiceProvider();
+
+ //Cria o Hash Code
+ 
+ byte [] byHashCode = oMD5Provider.ComputeHash (bytMensagem);
+ 
+ for (int iItem = 0; iItem < bytHashCode.Length; iItem ++)
+ 
+ {
+  strResultado += (char)  (bytHashCode[iItem]);
+ 
+ }
+
+ return strResultado;
+ 
+ }
